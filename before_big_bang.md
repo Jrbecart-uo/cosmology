@@ -245,3 +245,71 @@ Collaboration 2023). Only LiteBIRD-level precision separates the two outcomes:
   CPT-mirror universe gain ground.
 
 Either way, the bet in section 4 gets tested within about ten years.
+
+## 9. Testing section 5 with real Planck data
+
+Section 5 proposed that the weak signal at the largest angles of the CMB could be a
+trace of what came before inflation. The simplest physical version of that idea is a
+**cutoff**. Suppose inflation lasted only just long enough. Then the very largest
+scales we can see were created right at its start, when inflation was not yet running
+smoothly, so they carry less power. Contaldi et al. (2003) wrote this as
+P(k) = P_ΛCDM(k) × [1 − exp(−(k/k_c)^λ)], where k_c is the cutoff scale.
+
+`lowl_cutoff.py` fits that cutoff to the Planck 2018 temperature spectrum at the
+largest angles (multipoles ℓ = 2–29, the Commander component-separated spectrum). It
+uses CAMB, which agrees with Planck's own best-fit theory curve to 0.4%. Everything
+except the cutoff is fixed at the Planck 2018 best fit. `lowl_cutoff.png` shows the result.
+
+**Method caveat.** Planck's real low-ℓ likelihood is not reproduced. I use the
+standard approximate form (a Wishart likelihood per multipole). It is calibrated so
+that its error bars match the ones Planck publishes, which implies an effective sky
+fraction of about 0.74 (0.39 for the quadrupole). Full-sky weighting gives the
+quadrupole the most influence possible, and I use it as an upper bound.
+
+**What the data show:**
+
+| Quantity | Result |
+|---|---|
+| Quadrupole (ℓ = 2) vs ΛCDM expectation | 22% of the expected power |
+| Average power, ℓ = 2–29, vs ΛCDM | 90% |
+| Chance of a quadrupole this low in ΛCDM | 5% (full sky) to 21% (calibrated) |
+| Chance of large-angle correlation S₁/₂ this low in ΛCDM | 8% to 14% |
+| Best-fit cutoff | k_c ≈ 2×10⁻⁴ Mpc⁻¹ (ℓ ≈ 3, about the size of the observable universe) |
+| Fit improvement from the cutoff (Δχ², 2 extra parameters) | −0.9 (calibrated) to −1.7 (full-sky upper bound): 0.5σ–0.8σ |
+| Planck 2015's own fit of the same cutoff, full likelihood | Δχ² ≈ −3.4 (Planck 2015 XX), about 1.3σ |
+| Cutoffs ruled out | k_c ≳ 5×10⁻⁴ Mpc⁻¹ (suppression reaching ℓ ≈ 7 or beyond) |
+
+The S₁/₂ numbers are for the full-sky Commander spectrum. Computed directly on the
+masked sky outside the Galaxy, the missing large-angle correlation is much rarer:
+0.025% in WMAP (Copi et al. 2009) and below 0.24% in foreground-cleaned WMAP and
+Planck maps (Copi et al. 2015). How rare it really is depends on that choice and on
+whether choosing the statistic after seeing the data inflates its significance. That
+debate is unresolved (Planck 2018 VII).
+
+**Would polarisation settle it?** Suppose the best-fit cutoff is real. A perfect,
+noise-free E-mode polarisation map over 70% of the sky (LiteBIRD-like) would add only
+about Δχ² ≈ 1.6. The cutoff model predicts 10–30% less E-mode power at ℓ = 2–10, but
+there are only a few independent patterns on the sky at those scales. With what is
+observed now, the total would be Δχ² ≈ 2.4–5, still below 2σ. This forecast is even
+optimistic, because τ (the reionisation optical depth) was held fixed, and in reality
+it partly mimics a cutoff in E-modes.
+
+**Conclusion:**
+
+1. **The data are consistent with "just enough inflation", but they don't ask for it.**
+   The cutoff improves the fit by less than 1σ in this analysis, and by about 1.3σ in
+   Planck's. What the data do say is that inflation did not end its "start-up" phase
+   inside the scales we can see beyond ℓ ≈ 7.
+2. **The CMB alone probably can never prove a pre-inflation cutoff.** The obstacle is
+   cosmic variance, not instruments. The largest scales contain only a handful of
+   independent patterns, so even perfect temperature and polarisation maps leave a
+   cutoff of the allowed size below 2σ.
+3. **The more promising test is a prediction made before the data exist.** If a
+   physical reason explains the missing temperature correlations, it must also predict
+   specific correlations in polarisation. Copi et al. (2013) derived such predictions.
+   The same applies to the loop-quantum-cosmology bounce (Ashtekar–Gupt 2016;
+   Ashtekar et al. 2020). LiteBIRD's large-scale polarisation maps can confirm or kill
+   these predictions without the after-the-fact problem.
+
+**Effect on the bet in section 4: none.** The testable version of section 5 survives,
+but as a "weak, possibly never decisive" signal, not as a smoking gun.

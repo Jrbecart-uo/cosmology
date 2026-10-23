@@ -17,11 +17,17 @@ different subject. Keep it separate: never copy it back into
   origin, CPT-mirror universe), a personal bet with rough credences, a testable
   version (large-scale CMB anomalies as traces of the pre-inflation era), how to
   imagine "no time", whether space survives without time, and (section 8) which
-  models the measured n_s and r already rule out.
+  models the measured n_s and r already rule out, and (section 9) a Planck-data
+  test of the large-angle "pre-inflation trace" idea.
 - `ns_r.py` / `ns_r.png`: slow-roll (n_s, r) predictions for standard inflation
   models vs current CMB limits. Run with
   `uv run --no-project --with numpy --with scipy --with matplotlib python ns_r.py`
   (system python3 has numpy/scipy but no matplotlib).
+- `lowl_cutoff.py` / `lowl_cutoff.png` (section 9): fits a large-scale cutoff to the
+  Planck 2018 low-l TT spectrum with CAMB, gives anomaly p-values and an E-mode
+  forecast. Run with
+  `uv run --no-project --with camb --with matplotlib python lowl_cutoff.py`
+  (downloads Planck files into `data/`, which is git-ignored).
 - `before_the_bang.html`: a popular-science version of the note for non-experts
   (timeline, spacetime sketches of the seven stories, an interactive "which stories
   survive?" scenario section, button-driven animations: rewind the timeline, play

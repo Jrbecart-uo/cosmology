@@ -17,8 +17,9 @@ different subject. Keep it separate: never copy it back into
   origin, CPT-mirror universe), a personal bet with rough credences, a testable
   version (large-scale CMB anomalies as traces of the pre-inflation era), how to
   imagine "no time", whether space survives without time, and (section 8) which
-  models the measured n_s and r already rule out, and (section 9) a Planck-data
-  test of the large-angle "pre-inflation trace" idea.
+  models the measured n_s and r already rule out, (section 9) a Planck-data
+  test of the large-angle "pre-inflation trace" idea, and (section 10) the
+  neutrino-mass test of the CPT-mirror universe.
 - `ns_r.py` / `ns_r.png`: slow-roll (n_s, r) predictions for standard inflation
   models vs current CMB limits. Run with
   `uv run --no-project --with numpy --with scipy --with matplotlib python ns_r.py`
@@ -28,6 +29,10 @@ different subject. Keep it separate: never copy it back into
   forecast. Run with
   `uv run --no-project --with camb --with matplotlib python lowl_cutoff.py`
   (downloads Planck files into `data/`, which is git-ignored).
+- `neutrino_mass.py` / `neutrino_mass.png` (section 10): sum of masses, m_beta and
+  m_betabeta vs lightest mass for both orderings (NuFIT 6.0), with current limits;
+  the CPT-mirror point is lightest mass = 0. Run with
+  `uv run --no-project --with numpy --with matplotlib python neutrino_mass.py`.
 - `before_the_bang.html`: a popular-science version of the note for non-experts
   (timeline, spacetime sketches of the seven stories, an interactive "which stories
   survive?" scenario section, button-driven animations: rewind the timeline, play
@@ -55,8 +60,11 @@ branch `main`.
 
 ## Possible next steps (offered, not started)
 
-- Update the constraint table in section 8 when new results appear (SPT-3G full
-  survey, Simons Observatory, LiteBIRD, newer DESI). Look them up and cite them.
+- Update the constraint tables in sections 8 and 10 when new results appear
+  (SPT-3G full survey, Simons Observatory, LiteBIRD, newer DESI, JUNO mass
+  ordering, LEGEND/nEXO). Look them up and cite them.
+- Independent fact-check of the note and the page by a fresh agent before the page
+  is shown more widely.
 - Add the second-order slow-roll terms or a full numerical mode calculation only if
   data precision gets close to 1e-3 in n_s.
 

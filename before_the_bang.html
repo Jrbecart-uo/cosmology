@@ -382,7 +382,9 @@ footer p { margin: 0; }
     <div class="eyebrow">4 · How we will find out</div>
     <h2 id="h-lab">The deciding clue: ripples in space from the first instant</h2>
     <p>Inflation shakes space itself and should leave <em>gravitational waves</em> behind, imprinted as a faint swirl pattern in the polarisation of the CMB. Their strength is a number called <span class="mono">r</span>. Bounces and the mirror universe predict essentially none. So far nobody has seen them, which already rules out the simplest inflation models.</p>
-    <p>Two experiments will look much harder: the Simons Observatory in Chile, running now, and the LiteBIRD satellite, planned for the 2030s. Pick a possible result below and see which stories survive.</p>
+    <p>Two experiments will look much harder: the Simons Observatory in Chile, running now, and the LiteBIRD satellite, planned for the 2030s.</p>
+    <p>The mirror universe has a second, completely different test. It says the lightest of the three neutrinos, ghostly particles that pass through you by the trillions every second, weighs <em>exactly nothing</em>. By weighing how strongly matter clumps across the universe, cosmologists now find that the three neutrino masses add up to less than about 0.06&nbsp;eV. That is right at the smallest total that neutrino experiments allow, and exactly where the mirror universe wants it. (The fit is a little <em>too</em> good: the data lean slightly below the allowed minimum, which probably means something else is not yet understood.) "Exactly zero" can never be proven, but a measured mass would end the story.</p>
+    <p>Pick possible results below and see which stories survive.</p>
   </div>
   <figure class="lab">
     <div class="controls">
@@ -395,9 +397,9 @@ footer p { margin: 0; }
       </div>
       <div class="control"><span id="l-nu">Mass of the lightest neutrino</span>
         <div class="seg" role="group" aria-labelledby="l-nu">
-          <button type="button" id="nu-unk" data-nu="unk" aria-pressed="true">Unknown (today)</button>
-          <button type="button" id="nu-zero" data-nu="zero" aria-pressed="false">Exactly zero</button>
-          <button type="button" id="nu-mass" data-nu="mass" aria-pressed="false">Has a mass</button>
+          <button type="button" id="nu-unk" data-nu="unk" aria-pressed="true">Today: not yet measured</button>
+          <button type="button" id="nu-zero" data-nu="zero" aria-pressed="false">Total stays at the minimum</button>
+          <button type="button" id="nu-mass" data-nu="mass" aria-pressed="false">Lightest one has a mass</button>
         </div>
       </div>
     </div>
@@ -429,7 +431,7 @@ footer p { margin: 0; }
     </div>
     <p class="verdict" id="verdict" aria-live="polite"></p>
     <div class="board" id="board"></div>
-    <figcaption>Model bars span 50 to 60 "e-folds" of inflation, a number that depends on details of how the universe heated up. Predictions come from standard slow-roll formulas (script <span class="mono">ns_r.py</span>). Today's limit: r &lt; 0.034 (Balkenhol et al. 2026). Reach lines mark roughly twice each experiment's target precision.</figcaption>
+    <figcaption>Model bars span 50 to 60 "e-folds" of inflation, a number that depends on details of how the universe heated up. Predictions come from standard slow-roll formulas (script <span class="mono">ns_r.py</span>). Today's limit: r &lt; 0.034 (Balkenhol et al. 2026). Reach lines mark roughly twice each experiment's target precision. Neutrino numbers: DESI 2025–2026 and NuFIT 6.0 (script <span class="mono">neutrino_mass.py</span>).</figcaption>
   </figure>
 </section>
 
@@ -492,6 +494,8 @@ footer p { margin: 0; }
     <li>Balkenhol et al., "Inflation at the End of 2025" (2026), <a href="https://arxiv.org/abs/2512.10613">arXiv:2512.10613</a></li>
     <li>Simons Observatory, JCAP 02 (2019) 056</li>
     <li>LiteBIRD Collaboration, <a href="https://arxiv.org/abs/2406.02724">arXiv:2406.02724</a></li>
+    <li>DESI Collaboration, DR2 Results II (2025), <a href="https://arxiv.org/abs/2503.14738">arXiv:2503.14738</a>; DR2 Results IV (2026), <a href="https://arxiv.org/abs/2607.27410">arXiv:2607.27410</a></li>
+    <li>Esteban et al., NuFIT 6.0, JHEP 12 (2024) 216</li>
     <li>Page &amp; Wootters, Phys. Rev. D 27 (1983); Moreva et al., Phys. Rev. A 89 (2014)</li>
   </ul>
 </footer>
@@ -732,7 +736,7 @@ footer p { margin: 0; }
     { name: "CPT-mirror universe", f(r, nu) {
         if (nu === "mass") return ["dead", "It needs the lightest neutrino to be exactly massless."];
         if (r === "yes") return ["dead", "It predicts no primordial gravitational waves at all."];
-        if (r === "no" || nu === "zero") return ["favoured", r === "no" && nu === "zero" ? "Both of its sharp predictions came true." : "One of its sharp predictions came true; the other is still open."];
+        if (r === "no" || nu === "zero") return ["favoured", r === "no" && nu === "zero" ? "Both of its sharp predictions passed their tests." : "One of its sharp predictions passed its test; the other is still open."];
         return ["alive", "Both of its predictions are still untested."]; } },
   ];
   const verdicts = {

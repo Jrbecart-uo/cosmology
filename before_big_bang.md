@@ -83,7 +83,7 @@ not chance. Tests:
    look at the largest scales. Same oddities → probably real physics.
 2. **Primordial gravitational waves:** a detection strongly supports inflation and
    rules out the CPT-mirror universe and the ekpyrotic bounce.
-3. **Neutrino masses:** if the lightest neutrino has mass, the CPT-mirror universe
+3. **Neutrino masses** (section 10): if the lightest neutrino has mass, the CPT-mirror universe
    is dead.
 
 ## 6. How can a human imagine "no time"?
@@ -313,3 +313,83 @@ it partly mimics a cutoff in E-modes.
 
 **Effect on the bet in section 4: none.** The testable version of section 5 survives,
 but as a "weak, possibly never decisive" signal, not as a smoking gun.
+
+## 10. The other sharp test: neutrino masses
+
+Section 8 tested the stories with r. The CPT-mirror universe (Boyle–Finn–Turok 2018)
+makes a second sharp prediction that has nothing to do with the CMB: **the lightest
+neutrino has exactly zero mass**, and the light neutrinos are Majorana particles (each
+is its own antiparticle). None of the other six stories predicts anything about
+neutrino masses, so this test is specific to the CPT mirror.
+
+**What is established.** There are three neutrino masses. Oscillation experiments
+measure only the *differences* of their squares, so once you choose the lightest mass,
+all three are fixed. The order is still open: "normal" (two light, one heavier) or
+"inverted" (one light, two heavier). Using NuFIT 6.0 (Esteban et al. 2024),
+`neutrino_mass.py` computes:
+
+| | Normal ordering | Inverted ordering |
+|---|---|---|
+| Masses if the lightest is exactly 0 (the CPT-mirror point) | 0, 8.7, 50.1 meV | 49.1, 49.8, 0 meV |
+| Sum of the three (what cosmology measures) | 58.8 meV | 98.9 meV |
+| m_β (what tritium beta decay measures) | 8.8 meV | 48.8 meV |
+| m_ββ (what neutrinoless double beta decay measures, if Majorana) | 1.5–3.7 meV | 18–48 meV |
+
+(1 meV = 0.001 eV. The m_ββ ranges come from two unknown phases.) These sums are the
+smallest the two orderings allow. A nonzero lightest mass raises all of them, as
+`neutrino_mass.png` shows.
+
+**Current limits:**
+
+| Measurement | Limit | Source |
+|---|---|---|
+| Sum of masses, DESI DR2 BAO + CMB, ΛCDM | < 64 meV (95%) | DESI Collaboration 2025 (DR2 Results II) |
+| Same + Lyman-α full-shape | < 59 meV (95%) | DESI Collaboration 2026 (DR2 Results IV) |
+| Sum, CMB (Planck + ACT + SPT) + DESI DR2 + DES supernovae | < 52 meV (ΛCDM, flat prior); < 92 meV with a prior that respects oscillation data | Hou et al. 2026 |
+| Sum, DESI DR2 + CMB, evolving dark energy (w0wa) | < 160 meV (95%) | DESI Collaboration 2025 |
+| m_β, direct (tritium) | < 0.45 eV (90%) | KATRIN Collaboration 2025 |
+| m_ββ, xenon-136 | < 28–122 meV (90%), range from nuclear-physics uncertainty | KamLAND-Zen 2024 |
+| Ordering, oscillation data | normal preferred, Δχ² = 6.1 | NuFIT 6.0 (with Super-Kamiokande atmospheric data) |
+| Ordering, adding the first JUNO data | normal preferred, Δχ² = 4.6 to 9.4 | Esteban et al. 2026 |
+
+**What follows:**
+
+1. **Cosmology sits exactly at the CPT-mirror point, and maybe even below it.** Taken
+   at face value, the DESI limit of 64 meV allows a lightest mass of only up to about
+   4 meV in the normal ordering, and it excludes the inverted ordering. But the data
+   actually *prefer* a sum below the 58.8 meV that oscillations require. Some analyses
+   frame this as a preference for a "negative" mass (Green–Meyers 2024; Elbers et al.
+   2025, who find a 2.8–3.3σ tension with oscillation data in ΛCDM). The usual
+   explanations are excess CMB lensing or dark energy that evolves. With evolving dark
+   energy the limit loosens to 160 meV, which allows a lightest mass of up to about
+   46 meV. So the CPT prediction agrees with the data, but it can't take credit: the
+   good fit is partly a symptom of a tension that nobody understands yet.
+2. **"Exactly zero" can never be proven, only refuted.** A lightest mass of 10 meV
+   raises the sum by only 15.6 meV. Seeing that at 2σ needs a precision of about 8 meV
+   on the sum. Today's precision is 20 meV (DESI DR2 + CMB), which could detect only a
+   lightest mass of about 21 meV or more. A result that *would* kill the CPT mirror is
+   a measured sum clearly above the floor that holds up across dark-energy models. For
+   example, 80 ± 10 meV in the normal ordering means a lightest mass of about 13 meV.
+3. **Neutrinoless double beta decay gives a cleaner test than I expected.**
+   - *Normal ordering:* the CPT-mirror point predicts m_ββ = 1.5–3.7 meV. That is below
+     the reach of the next generation of experiments (LEGEND-1000 aims at 9–21 meV,
+     per its 2021 pre-conceptual design report). But any signal those experiments
+     *do* see needs m_ββ ≳ 9 meV, which requires a lightest mass of at least 6.8 meV.
+     So in the normal ordering, a detection of neutrinoless double beta decay by the
+     next generation would rule out the CPT mirror. This assumes the decay goes
+     through ordinary light-neutrino exchange.
+   - *Inverted ordering:* the CPT mirror predicts 18–48 meV, inside next-generation
+     reach. A non-detection below 18 meV would kill it, or kill the Majorana assumption,
+     which the same paper also predicts.
+4. **Beta decay can't test it.** m_β = 8.8 meV is fifty times below KATRIN's limit.
+
+**Bottom line.** The neutrino test is slower than the r test of section 8. The decisive
+inputs are the mass ordering (JUNO, within a few years), a cosmological sum with
+~5–10 meV precision that holds up across dark-energy models, and next-generation
+double beta decay (2030s). The CPT mirror passes every check so far. The odd
+"below the minimum" preference in cosmology is the main thing to watch: if it goes
+away because of evolving dark energy, the room for a nonzero lightest mass reopens.
+If it goes away because a nonzero sum is measured, the CPT mirror could be dead.
+
+**Effect on the bet in section 4: none yet.** This adds a second, independent way
+the CPT-mirror story could die within about 10–15 years.

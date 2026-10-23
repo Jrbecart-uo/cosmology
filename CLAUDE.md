@@ -16,9 +16,15 @@ different subject. Keep it separate: never copy it back into
   tunnelling, eternal inflation, bounce, conformal cyclic cosmology, black-hole
   origin, CPT-mirror universe), a personal bet with rough credences, a testable
   version (large-scale CMB anomalies as traces of the pre-inflation era), how to
-  imagine "no time", and whether space survives without time.
+  imagine "no time", whether space survives without time, and (section 8) which
+  models the measured n_s and r already rule out.
+- `ns_r.py` / `ns_r.png`: slow-roll (n_s, r) predictions for standard inflation
+  models vs current CMB limits. Run with
+  `uv run --no-project --with numpy --with scipy --with matplotlib python ns_r.py`
+  (system python3 has numpy/scipy but no matplotlib).
 
-This folder is not a git repository yet. Run `git init` only if the user asks.
+Git repository, remote `origin` = github.com/Jrbecart-uo/cosmology (private),
+branch `main`.
 
 ## How to work here
 
@@ -36,13 +42,12 @@ This folder is not a git repository yet. Run `git init` only if the user asks.
 - **Update `before_big_bang.md` in place** when the user asks follow-up questions
   (add a section) instead of creating scattered new files.
 
-## Possible next step (offered, not started)
+## Possible next steps (offered, not started)
 
-Compute the predicted tensor-to-scalar ratio r and spectral index n_s for the main
-inflation and bounce models and compare them with current Planck, ACT and BICEP/Keck
-constraints, to show which "before" stories the data already disfavours. Python
-with numpy/scipy is available (system python3). Use current published constraints,
-looked up and cited, not remembered values.
+- Update the constraint table in section 8 when new results appear (SPT-3G full
+  survey, Simons Observatory, LiteBIRD, newer DESI). Look them up and cite them.
+- Add the second-order slow-roll terms or a full numerical mode calculation only if
+  data precision gets close to 1e-3 in n_s.
 
 ## User preferences that apply here too
 

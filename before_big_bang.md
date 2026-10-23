@@ -146,3 +146,102 @@ where geometry is expected to fluctuate wildly ("spacetime foam"). Below that,
 fade together. Several leading pictures keep something space-like after time is
 gone, and in others both come from something that is neither: relations, not
 distances.
+
+## 8. What the data already say: n_s and r
+
+Two numbers measured from the CMB summarise the seed fluctuations:
+
+- **n_s, the spectral index.** It says how the strength of the fluctuations changes
+  with size. n_s = 1 means "the same at every scale"; slightly below 1 means large
+  scales are a bit stronger.
+- **r, the tensor-to-scalar ratio.** It is the strength of primordial gravitational
+  waves compared with the density ripples. Inflation makes gravitational waves
+  whose size depends on how much energy drove it. Most bounce models make
+  essentially none.
+
+Each inflation model is a potential V(φ), and it predicts a point (n_s, r) once you
+fix N, the number of e-folds between when today's large scales were created and the
+end of inflation. N is between about 50 and 60; the exact value depends on how the
+universe reheated. `ns_r.py` computes these points with the standard slow-roll
+formulas, and `ns_r.png` plots them against the data.
+
+**Current limits** (68% for n_s, 95% for r):
+
+| Data | n_s | r |
+|---|---|---|
+| Planck 2018 (Planck Collaboration VI, 2020) | 0.9649 ± 0.0042 | |
+| BICEP/Keck 2018 (BICEP/Keck Collaboration, PRL 2021) | | < 0.036 |
+| ACT DR6 + Planck + lensing + DESI DR1 BAO (Louis et al. 2025) | 0.974 ± 0.003 | |
+| All CMB: Planck + SPT-3G + ACT + BICEP/Keck (Balkenhol et al. 2026) | 0.9682 ± 0.0032 | < 0.034 |
+| Same + DESI DR2 BAO (Balkenhol et al. 2026) | 0.9728 ± 0.0029 | < 0.034 |
+
+The two last rows disagree a little. Adding the DESI galaxy-distance data (BAO)
+pushes n_s up. The authors call the CMB–DESI difference marginal and so far
+unexplained (Balkenhol et al. 2026; McDonough–Ferreira 2025 get the same
+upward shift for every CMB data set).
+
+**Results** (N = 50 → 60; σ = distance from the measured n_s):
+
+| Model | n_s | r | vs CMB only | vs CMB + DESI |
+|---|---|---|---|---|
+| φ⁴ (chaotic) | 0.941 → 0.951 | 0.26–0.31 | dead (r and n_s) | dead |
+| φ² (chaotic, the textbook model) | 0.960 → 0.967 | 0.13–0.16 | dead (r) | dead |
+| φ, φ^(2/3) (axion monodromy) | 0.970 → 0.978 | 0.04–0.08 | dead (r) | dead (r), although n_s fits |
+| Natural inflation, f = 7 | 0.957 → 0.963 | 0.07–0.09 | dead (r) | dead |
+| Starobinsky R² / Higgs | 0.962 → 0.968 | ≈ 0.003–0.004 | fine (−2.1σ → 0σ) | strained (−3.9σ → −1.7σ) |
+| E-model α-attractor, α = 10 | 0.964 → 0.970 | ≈ 0.02 | fine | strained at small N |
+| T-model α-attractor, α = 1/3 | 0.960 → 0.967 | ≈ 0.001 | fine | strained |
+| Polynomial attractor k = 2 (Kallosh–Linde 2022) | 0.969 → 0.974 | ≈ 0.003–0.004 | fine | fine |
+| Polynomial attractor k = 4 | 0.966 → 0.972 | < 0.001 | fine | fine |
+
+What the data already rule in or out:
+
+1. **The simplest "big field rolling down a parabola" inflation is dead.** That kill
+   comes from r, the missing gravitational waves, not from n_s. Surviving inflation has
+   a flat plateau: a potential that is almost constant for large φ.
+2. **Starobinsky / Higgs inflation fits the CMB alone but is under pressure once DESI
+   is added**, at about 2–4σ depending on N. This is the "mild pressure" mentioned
+   in section 4. Whether it is real depends on the unexplained CMB–DESI difference.
+   Balkenhol et al. 2026 and McDonough–Ferreira 2025 both say that plateaus
+   approached polynomially rather than exponentially (polynomial α-attractors) fit
+   either way.
+3. **Inflation itself is not in trouble.** Plateau models cover the whole allowed n_s
+   range with r from 0.02 down to below 0.001.
+
+What this means for the "before" stories of section 3:
+
+- **No-boundary, tunnelling, eternal inflation.** They describe how inflation
+  *started*, not which potential it ran on, so they inherit whatever plateau model is
+  right. The data say nothing against them. They also say nothing *for* them beyond
+  "inflation is fine".
+- **Bounce followed by inflation** (loop quantum cosmology). Its n_s and r are the
+  same as inflation's. The bounce could only show up at the very largest scales, as
+  slightly *less* power there (Ashtekar–Gupt 2016; Ashtekar et al., PRL 2020). That links it to the anomalies
+  of section 5.
+- **Bounce instead of inflation.**
+  - *Ekpyrotic/cyclic:* r is essentially zero, because the slow contraction does not
+    amplify gravitational waves (Ijjas–Lehners–Steinhardt 2014). n_s depends on the
+    model and can be tuned to the measured value. The data allow it. The test that
+    could kill it is a detection of r.
+  - *Matter bounce:* the simplest version predicts n_s = 1 exactly, which is about
+    10σ away from 0.968, and r too large. Variants such as the ΛCDM bounce
+    (Cai–Wilson-Ewing 2015) get a slight red tilt and small r, at the price of extra
+    assumptions.
+- **CPT-mirror universe.** It predicts r = 0 (Boyle–Finn–Turok 2018). Turok–Boyle
+  2023 (a preprint) claim to derive the amplitude and tilt from Standard Model
+  couplings with no free parameter. The abstract gives no number, so I haven't
+  plotted it. The data allow it so far.
+- **Conformal cyclic cosmology, black-hole origin.** Neither gives a definite (n_s, r)
+  prediction, so this test doesn't touch them.
+
+**The coming decisive measurement is r.** Simons Observatory aims at σ(r) = 0.003
+(SO Collaboration 2019) and the LiteBIRD satellite at δr ≈ 0.001 (LiteBIRD
+Collaboration 2023). Only LiteBIRD-level precision separates the two outcomes:
+
+- **r ≈ 0.003 detected** (the Starobinsky / k = 2 value): strong evidence for plateau
+  inflation, and the end of the ekpyrotic bounce and the CPT-mirror universe.
+- **Nothing above ~0.002:** Starobinsky and Higgs inflation die. Inflation survives
+  only in models with tiny r (like k = 4 above). The no-inflation bounce and the
+  CPT-mirror universe gain ground.
+
+Either way, the bet in section 4 gets tested within about ten years.

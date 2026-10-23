@@ -24,7 +24,7 @@ different subject. Keep it separate: never copy it back into
   (system python3 has numpy/scipy but no matplotlib).
 - `before_the_bang.html`: a popular-science version of the note for non-experts
   (timeline, spacetime sketches of the seven stories, an interactive "which stories
-  survive?" scenario section). Artifact-format page: no <html>/<head> wrapper. Keep
+  survive?" scenario section). Standalone file (opens offline except Google Fonts). Keep
   it in sync with the note when the science changes.
 
 Git repository, remote `origin` = github.com/Jrbecart-uo/cosmology (private),

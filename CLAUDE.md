@@ -11,6 +11,8 @@ during a nanoprover session and was moved out of that repo because it is a
 different subject. Keep it separate: never copy it back into
 `~/tmp/mathTest/nanoprover`.
 
+- `README.md`: short overview for visitors to the repo (keep its one-line summaries
+  of the data tests in sync with the note).
 - `before_big_bang.md`: the main note. It covers what is known, inflation as the
   probable "first step back", a table of hypotheses for what came before (no-boundary,
   tunnelling, eternal inflation, bounce, conformal cyclic cosmology, black-hole

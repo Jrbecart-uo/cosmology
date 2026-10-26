@@ -36,11 +36,22 @@ different subject. Keep it separate: never copy it back into
 - `before_the_bang.html`: a popular-science version of the note for non-experts
   (timeline, spacetime sketches of the seven stories, an interactive "which stories
   survive?" scenario section, button-driven animations: rewind the timeline, play
-  inflation, play each sketch). Standalone file (opens offline except Google Fonts). Keep
-  it in sync with the note when the science changes.
+  inflation, play each sketch, plus a Planck data-vs-models plot for section 9).
+  Standalone file (opens offline except Google Fonts). Keep it in sync with the note
+  when the science changes.
+- `before_the_bang.fr.html`: the French version, same structure and scripts. When
+  the English page changes, make the same change here (it was generated once by exact
+  string replacement; edit it directly now).
 
 Git repository, remote `origin` = github.com/Jrbecart-uo/cosmology (private),
 branch `main`.
+
+Public copy of the two pages (approved by the user on 2026-10-26): repo
+github.com/Jrbecart-uo/jrbecart-uo.github.io, folder `before-the-bang/`
+(`index.html` = English copy, `before_the_bang.html`, `before_the_bang.fr.html`),
+served at https://jrbecart-uo.github.io/before-the-bang/. The site root holds an
+unrelated TTS app: never touch files outside that folder. After changing either page
+here, copy both into that folder and push, so the public copy doesn't go stale.
 
 ## How to work here
 

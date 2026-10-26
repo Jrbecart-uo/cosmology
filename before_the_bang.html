@@ -61,6 +61,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--warm); outline-
 .hero > *:not(canvas) { position: relative; z-index: 1; }
 .hero h1 span { color: var(--warm); }
 .canvas-note { font: 0.72rem/1.4 var(--mono); color: var(--muted); }
+.lang { justify-self: start; font: 500 0.78rem/1 var(--mono); letter-spacing: 0.06em; color: var(--cold); }
 
 /* figures */
 figure { margin: 0; background: var(--plate); border: 1px solid var(--hair); border-radius: 6px; padding: 1.2rem 1.2rem 1rem; display: grid; gap: 0.8rem; min-width: 0; }
@@ -141,6 +142,7 @@ footer p { margin: 0; }
 <header class="hero">
   <canvas id="cmb" aria-hidden="true"></canvas>
   <div class="eyebrow">Notes for the curious · October 2026</div>
+  <a class="lang" href="before_the_bang.fr.html" hreflang="fr" lang="fr">Version française →</a>
   <h1>Before the <span>Bang</span></h1>
   <p class="lede">What happened before the Big Bang, and what set it off? Nobody knows. But physicists have a handful of serious stories, and the next ten years of measurements will start to choose between them.</p>
   <div class="key" aria-label="How sure are we">
@@ -435,9 +437,85 @@ footer p { margin: 0; }
   </figure>
 </section>
 
+<section aria-labelledby="h-clue">
+  <div class="prose">
+    <div class="eyebrow">5 · A clue already in the sky? <span class="tag" style="--c: var(--spec)">speculation, tested</span></div>
+    <h2 id="h-clue">The biggest patterns in the sky are a little too faint</h2>
+    <p>Inflation stretches everything that came before it far beyond view, so any trace of the "before" can only survive on the very largest scales we can see. Suppose inflation lasted only just long enough. Then the biggest patterns in the CMB were made right at its start, while it was still getting going, like the first notes of an orchestra that is still tuning. They would come out weaker.</p>
+    <p>And they <em>are</em> a bit weak. The largest pattern of all, which spans the whole sky, has only about a fifth of its expected strength. Is that a fingerprint of what came before inflation? We tested it against the Planck satellite's measurements.</p>
+  </div>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 900 345" role="img" aria-label="Strength of the largest patterns in the CMB, measured by Planck, compared with standard inflation and with inflation that only just lasted long enough. The largest pattern is far below the standard prediction; the rest scatter around it.">
+        <line x1="70" y1="290.0" x2="870" y2="290.0" stroke="var(--hair)"/>
+        <text x="62" y="294.0" text-anchor="end" font-size="11" style="fill: var(--muted)">0</text>
+        <line x1="70" y1="245.4" x2="870" y2="245.4" stroke="var(--hair)"/>
+        <text x="62" y="249.4" text-anchor="end" font-size="11" style="fill: var(--muted)">500</text>
+        <line x1="70" y1="200.7" x2="870" y2="200.7" stroke="var(--hair)"/>
+        <text x="62" y="204.7" text-anchor="end" font-size="11" style="fill: var(--muted)">1,000</text>
+        <line x1="70" y1="156.1" x2="870" y2="156.1" stroke="var(--hair)"/>
+        <text x="62" y="160.1" text-anchor="end" font-size="11" style="fill: var(--muted)">1,500</text>
+        <line x1="70" y1="111.4" x2="870" y2="111.4" stroke="var(--hair)"/>
+        <text x="62" y="115.4" text-anchor="end" font-size="11" style="fill: var(--muted)">2,000</text>
+        <line x1="70" y1="66.8" x2="870" y2="66.8" stroke="var(--hair)"/>
+        <text x="62" y="70.8" text-anchor="end" font-size="11" style="fill: var(--muted)">2,500</text>
+        <line x1="70.0" y1="290" x2="70.0" y2="296" stroke="var(--muted)"/><text x="70.0" y="310" text-anchor="middle" font-size="11" style="fill: var(--muted)">2</text>
+        <line x1="189.8" y1="290" x2="189.8" y2="296" stroke="var(--muted)"/><text x="189.8" y="310" text-anchor="middle" font-size="11" style="fill: var(--muted)">3</text>
+        <line x1="340.7" y1="290" x2="340.7" y2="296" stroke="var(--muted)"/><text x="340.7" y="310" text-anchor="middle" font-size="11" style="fill: var(--muted)">5</text>
+        <line x1="545.5" y1="290" x2="545.5" y2="296" stroke="var(--muted)"/><text x="545.5" y="310" text-anchor="middle" font-size="11" style="fill: var(--muted)">10</text>
+        <line x1="750.2" y1="290" x2="750.2" y2="296" stroke="var(--muted)"/><text x="750.2" y="310" text-anchor="middle" font-size="11" style="fill: var(--muted)">20</text>
+        <line x1="870.0" y1="290" x2="870.0" y2="296" stroke="var(--muted)"/><text x="870.0" y="310" text-anchor="middle" font-size="11" style="fill: var(--muted)">30</text>
+        <polyline points="70.0,198.8 189.8,203.7 274.8,208.3 340.7,211.7 394.5,214.1 440.1,215.6 479.5,216.5 514.3,216.9 545.5,216.9 573.6,216.8 599.3,216.3 623.0,215.7 644.9,215.1 665.2,214.3 684.3,213.4 702.2,212.4 719.1,211.4 735.1,210.3 750.2,209.1 764.6,207.9 778.4,206.7 791.5,205.4 804.1,204.1 816.1,202.8 827.7,201.4 838.9,200.1 849.6,198.7 860.0,197.2" fill="none" stroke="var(--solid)" stroke-width="2.5"/>
+        <polyline points="70.0,223.5 189.8,224.0 274.8,225.1 340.7,225.8 394.5,226.1 440.1,226.0 479.5,225.7 514.3,225.0 545.5,224.2 573.6,223.3 599.3,222.3 623.0,221.2 644.9,220.0 665.2,218.8 684.3,217.6 702.2,216.3 719.1,215.0 735.1,213.6 750.2,212.2 764.6,210.8 778.4,209.3 791.5,207.9 804.1,206.5 816.1,205.0 827.7,203.5 838.9,202.0 849.6,200.5 860.0,199.0" fill="none" stroke="var(--spec)" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <line x1="70.0" y1="281.7" x2="70.0" y2="222.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="70.0" cy="269.8" r="4" fill="var(--ink)"/>
+        <line x1="189.8" y1="246.6" x2="189.8" y2="98.1" stroke="var(--muted)" stroke-width="1.2"/><circle cx="189.8" cy="206.3" r="4" fill="var(--ink)"/>
+        <line x1="274.8" y1="254.5" x2="274.8" y2="168.7" stroke="var(--muted)" stroke-width="1.2"/><circle cx="274.8" cy="228.2" r="4" fill="var(--ink)"/>
+        <line x1="340.7" y1="207.2" x2="340.7" y2="52.7" stroke="var(--muted)" stroke-width="1.2"/><circle cx="340.7" cy="155.9" r="4" fill="var(--ink)"/>
+        <line x1="394.5" y1="258.2" x2="394.5" y2="206.7" stroke="var(--muted)" stroke-width="1.2"/><circle cx="394.5" cy="240.2" r="4" fill="var(--ink)"/>
+        <line x1="440.1" y1="221.2" x2="440.1" y2="127.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="440.1" cy="187.1" r="4" fill="var(--ink)"/>
+        <line x1="479.5" y1="252.2" x2="479.5" y2="206.1" stroke="var(--muted)" stroke-width="1.2"/><circle cx="479.5" cy="235.0" r="4" fill="var(--ink)"/>
+        <line x1="514.3" y1="246.9" x2="514.3" y2="196.5" stroke="var(--muted)" stroke-width="1.2"/><circle cx="514.3" cy="227.7" r="4" fill="var(--ink)"/>
+        <line x1="545.5" y1="239.0" x2="545.5" y2="185.4" stroke="var(--muted)" stroke-width="1.2"/><circle cx="545.5" cy="218.2" r="4" fill="var(--ink)"/>
+        <line x1="573.6" y1="233.8" x2="573.6" y2="179.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="573.6" cy="212.4" r="4" fill="var(--ink)"/>
+        <line x1="599.3" y1="240.1" x2="599.3" y2="194.0" stroke="var(--muted)" stroke-width="1.2"/><circle cx="599.3" cy="221.8" r="4" fill="var(--ink)"/>
+        <line x1="623.0" y1="250.7" x2="623.0" y2="215.5" stroke="var(--muted)" stroke-width="1.2"/><circle cx="623.0" cy="236.5" r="4" fill="var(--ink)"/>
+        <line x1="644.9" y1="235.7" x2="644.9" y2="191.9" stroke="var(--muted)" stroke-width="1.2"/><circle cx="644.9" cy="217.8" r="4" fill="var(--ink)"/>
+        <line x1="665.2" y1="220.5" x2="665.2" y2="167.5" stroke="var(--muted)" stroke-width="1.2"/><circle cx="665.2" cy="198.7" r="4" fill="var(--ink)"/>
+        <line x1="684.3" y1="248.0" x2="684.3" y2="215.3" stroke="var(--muted)" stroke-width="1.2"/><circle cx="684.3" cy="234.5" r="4" fill="var(--ink)"/>
+        <line x1="702.2" y1="218.6" x2="702.2" y2="167.9" stroke="var(--muted)" stroke-width="1.2"/><circle cx="702.2" cy="197.6" r="4" fill="var(--ink)"/>
+        <line x1="719.1" y1="243.7" x2="719.1" y2="210.4" stroke="var(--muted)" stroke-width="1.2"/><circle cx="719.1" cy="229.8" r="4" fill="var(--ink)"/>
+        <line x1="735.1" y1="223.9" x2="735.1" y2="179.1" stroke="var(--muted)" stroke-width="1.2"/><circle cx="735.1" cy="205.0" r="4" fill="var(--ink)"/>
+        <line x1="750.2" y1="244.0" x2="750.2" y2="213.4" stroke="var(--muted)" stroke-width="1.2"/><circle cx="750.2" cy="231.1" r="4" fill="var(--ink)"/>
+        <line x1="764.6" y1="248.4" x2="764.6" y2="219.7" stroke="var(--muted)" stroke-width="1.2"/><circle cx="764.6" cy="236.3" r="4" fill="var(--ink)"/>
+        <line x1="778.4" y1="247.7" x2="778.4" y2="220.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="778.4" cy="236.0" r="4" fill="var(--ink)"/>
+        <line x1="791.5" y1="237.1" x2="791.5" y2="204.5" stroke="var(--muted)" stroke-width="1.2"/><circle cx="791.5" cy="223.2" r="4" fill="var(--ink)"/>
+        <line x1="804.1" y1="229.7" x2="804.1" y2="193.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="804.1" cy="214.1" r="4" fill="var(--ink)"/>
+        <line x1="816.1" y1="232.4" x2="816.1" y2="197.3" stroke="var(--muted)" stroke-width="1.2"/><circle cx="816.1" cy="217.3" r="4" fill="var(--ink)"/>
+        <line x1="827.7" y1="231.1" x2="827.7" y2="197.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="827.7" cy="216.4" r="4" fill="var(--ink)"/>
+        <line x1="838.9" y1="217.3" x2="838.9" y2="178.2" stroke="var(--muted)" stroke-width="1.2"/><circle cx="838.9" cy="200.4" r="4" fill="var(--ink)"/>
+        <line x1="849.6" y1="206.5" x2="849.6" y2="162.4" stroke="var(--muted)" stroke-width="1.2"/><circle cx="849.6" cy="187.3" r="4" fill="var(--ink)"/>
+        <line x1="860.0" y1="218.9" x2="860.0" y2="181.4" stroke="var(--muted)" stroke-width="1.2"/><circle cx="860.0" cy="202.5" r="4" fill="var(--ink)"/>
+        <text x="80" y="283" font-size="10.5" style="fill: var(--warm)">▲ largest pattern: about 1/5 of expected</text>
+        <g font-size="11.5">
+          <line x1="560" y1="56" x2="596" y2="56" stroke="var(--solid)" stroke-width="2.5"/><text x="604" y="60">standard prediction</text>
+          <line x1="560" y1="80" x2="596" y2="80" stroke="var(--spec)" stroke-width="2.5" stroke-dasharray="7 5"/><text x="604" y="84">"just enough" inflation</text>
+          <line x1="578" y1="96" x2="578" y2="112" stroke="var(--muted)" stroke-width="1.2"/><circle cx="578" cy="104" r="4" fill="var(--ink)"/><text x="604" y="108">Planck 2018 measurement</text>
+        </g>
+        <text x="470" y="334" text-anchor="middle" font-size="11" style="fill: var(--muted)">size of the pattern: 2 = the whole sky, 30 = about 6° across (larger numbers = smaller patterns)</text>
+        <text x="12" y="165" font-size="11" text-anchor="middle" transform="rotate(-90 12 165)" style="fill: var(--muted)">strength (μK²)</text>
+      </svg>
+    </div>
+    <figcaption>Each dot is one size of pattern in the Planck 2018 temperature map; the bars show its uncertainty. The bars are large because the sky holds only a handful of such giant patterns, so even a perfect instrument cannot pin them down better. Curves computed with the CAMB code (script <span class="mono">lowl_cutoff.py</span>).</figcaption>
+  </figure>
+  <div class="prose">
+    <p><strong>The verdict: allowed, but not needed.</strong> The "just enough inflation" curve fits slightly better, but the improvement is smaller than the random scatter you would expect anyway (less than 1σ here, about 1.3σ in Planck's own analysis). A largest pattern this faint turns up by pure chance in roughly one sky in five to one in twenty. What the data <em>do</em> say is that any such start-up effect cannot reach much smaller patterns: stronger versions are disfavoured.</p>
+    <p><strong>Can future telescopes settle it?</strong> Probably not completely. We have only one sky, and it contains only a few patterns this big, like judging whether a die is loaded from five throws. Mapping the polarisation of the CMB (LiteBIRD) adds a second, independent look, but even a perfect map would bring the evidence only to about 2σ at best. The fairest test is to write down predictions <em>before</em> LiteBIRD measures, so that nobody can tune the explanation after seeing the answer.</p>
+  </div>
+</section>
+
 <section aria-labelledby="h-time">
   <div class="prose">
-    <div class="eyebrow">5 · The hardest part</div>
+    <div class="eyebrow">6 · The hardest part</div>
     <h2 id="h-time">How can there be no time?</h2>
     <p>We can't picture it directly, because picturing is itself something that happens in time. But nobody can picture curved four-dimensional space either, and analogies still get us surprisingly far.</p>
   </div>
@@ -468,11 +546,11 @@ footer p { margin: 0; }
 
 <section aria-labelledby="h-bet">
   <div class="prose">
-    <div class="eyebrow">6 · A bet <span class="tag" style="--c: var(--spec)">personal guess</span></div>
+    <div class="eyebrow">7 · A bet <span class="tag" style="--c: var(--spec)">personal guess</span></div>
     <h2 id="h-bet">Where I would put my money, for now</h2>
   </div>
   <ul class="bet">
-    <li><span class="n">~70%</span><span>The hot Big Bang was the end of inflation. The data put mild pressure on some of the simplest versions, not on the idea.</span></li>
+    <li><span class="n">~70%</span><span>The hot Big Bang was the end of inflation. Recent data put real pressure on some favourite versions (about 4σ for Starobinsky inflation once galaxy data are included), not on the idea.</span></li>
     <li><span class="n">1st</span><span>Before inflation, time itself fades out. The basic equation for the whole universe (the Wheeler–DeWitt equation) contains no time at all; time appears only inside the universe, as clocks become correlated with everything else. "Before" and "cause" then stop working near the beginning, like "south" at the Pole.</span></li>
     <li><span class="n">2nd</span><span>A bounce. It is the conservative option: the universe keeps existing, and quantum gravity just prevents infinite density.</span></li>
     <li><span class="n">∞</span><span>Every story hits the same wall. Even "from nothing" assumes the laws of quantum physics already exist. Physics explains how things change under laws; it cannot yet say why there are laws at all.</span></li>
@@ -496,6 +574,7 @@ footer p { margin: 0; }
     <li>LiteBIRD Collaboration, PTEP 2023, 042F01, <a href="https://arxiv.org/abs/2202.02773">arXiv:2202.02773</a></li>
     <li>DESI Collaboration, DR2 Results II (2025), <a href="https://arxiv.org/abs/2503.14738">arXiv:2503.14738</a>; DR2 Results IV (2026), <a href="https://arxiv.org/abs/2607.27410">arXiv:2607.27410</a></li>
     <li>Esteban et al., NuFIT 6.0, JHEP 12 (2024) 216</li>
+    <li>Contaldi, Peloso, Kofman &amp; Linde, JCAP 07 (2003) 002; Planck Collaboration, 2015 results XX (2016)</li>
     <li>Page &amp; Wootters, Phys. Rev. D 27 (1983); Moreva et al., Phys. Rev. A 89 (2014)</li>
   </ul>
 </footer>

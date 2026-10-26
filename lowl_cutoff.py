@@ -5,7 +5,7 @@ Tests the "testable version" of before_big_bang.md (section 5) against Planck 20
 1. Fit a large-scale cutoff in the primordial spectrum,
        P(k) = P_LCDM(k) * [1 - exp(-(k/k_c)^lambda)]   (Contaldi et al. 2003),
    to the Planck 2018 Commander TT spectrum at l = 2..29, with all other parameters at
-   the Planck 2018 best fit. A cutoff is what you expect if inflation lasted only just
+   the Planck 2018 mean values. A cutoff is what you expect if inflation lasted only just
    long enough and the largest scales we see were made at its very start.
 2. Measure how rare the low quadrupole and the weak large-angle correlation (S_1/2) are
    in base LCDM, and in the best-fit cutoff model.
@@ -37,7 +37,7 @@ LMIN, LMAX = 2, 29          # Commander range
 RNG = np.random.default_rng(1)
 NSIM = 200_000
 
-# Planck 2018 best fit, TT,TE,EE+lowE+lensing (Planck 2018 VI, Table 2)
+# Planck 2018 mean values, TT,TE,EE+lowE+lensing (Planck 2018 VI, Table 2)
 P18 = dict(H0=67.36, ombh2=0.02237, omch2=0.1200, tau=0.0544, mnu=0.06,
            As=np.exp(3.044) * 1e-10, ns=0.9649)
 
@@ -115,7 +115,7 @@ def main():
     tt0, ee0, te0 = spectra()
     th0 = tt0[ell]
     chi0 = wishart(dl, th0, nu).sum()
-    print(f"LCDM (Planck 2018 best fit), l=2-29: chi2 = {chi0:.1f} for {len(ell)} multipoles")
+    print(f"LCDM (Planck 2018 mean values), l=2-29: chi2 = {chi0:.1f} for {len(ell)} multipoles")
     print(f"  observed/LCDM:  l=2 {dl[0]/th0[0]:.2f},  l=3 {dl[1]/th0[1]:.2f},  "
           f"mean l=2-29 {np.mean(dl/th0):.2f}")
 
@@ -198,7 +198,7 @@ def main():
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2))
     a1.errorbar(ell, dl, yerr=[lo, hi], fmt="o", ms=4, color="k", label="Planck 2018 (Commander)")
     lfine = np.arange(2, 31)
-    a1.plot(lfine, tt0[lfine], color="tab:blue", label="ΛCDM (Planck best fit)")
+    a1.plot(lfine, tt0[lfine], color="tab:blue", label="ΛCDM (Planck 2018)")
     a1.plot(lfine, ttc[lfine], color="tab:orange",
             label=f"with cutoff, k_c = {best['kc']:.1e}/Mpc, λ = {best['lam']}")
     a1.set_xscale("log"); a1.set_xticks([2, 3, 5, 10, 20, 30]); a1.set_xticklabels(["2", "3", "5", "10", "20", "30"])

@@ -78,6 +78,7 @@ MODELS = [
     ("phi^2", monomial(2), 60),
     ("phi^1", monomial(1), 60),
     ("phi^(2/3)", monomial(2 / 3), 60),
+    ("phi^(1/3)", monomial(1 / 3), 60),
     ("Natural, f=7", natural(7.0), 7 * np.pi * 0.999),
     ("Starobinsky R^2 / Higgs", starobinsky(1.0), 40),
     ("E-model alpha=10", starobinsky(10.0), 80),
@@ -125,9 +126,9 @@ if __name__ == "__main__":
     ax.axhspan(R_MAX, 1, color="red", alpha=0.10, lw=0)
     ax.axhline(R_MAX, color="red", lw=1)
     ax.text(0.9405, R_MAX * 1.15, "r < 0.034 (95%) — excluded above", color="red", fontsize=8)
-    for label, rows in results.items():
+    for i, (label, rows) in enumerate(results.items()):
         ns = [x[1] for x in rows]; r = [x[2] for x in rows]
-        ax.plot(ns, r, "o-", ms=4, label=label)
+        ax.plot(ns, r, "o-", ms=4, label=label, color=f"C{i}" if i < 10 else "k")  # 11 models, 10 default colours
         ax.annotate("N=60", (ns[-1], r[-1]), fontsize=6, xytext=(3, 3), textcoords="offset points")
     # Bounce / CPT-mirror: no detectable primordial tensors; n_s is fit, not predicted (see note)
     ax.axhline(2e-4, color="k", ls=":", lw=1)

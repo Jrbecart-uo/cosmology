@@ -11,7 +11,11 @@ and compare with current limits. Lightest mass = 0 is the Boyle-Finn-Turok 2018 
 Run: uv run --no-project --with numpy --with matplotlib python neutrino_mass.py
      -> prints a table and writes neutrino_mass.png
 """
+import os
+
 import numpy as np
+
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 # --- NuFIT 6.0 (Esteban et al. 2024, JHEP 12 (2024) 216), Table 1, "IC24 with SK-atm" ---
 DM21 = 7.49e-5                      # eV^2, both orderings
@@ -23,14 +27,15 @@ S13 = {"NO": 0.02215, "IO": 0.02231}  # sin^2 theta_13
 # --- Current limits (see before_big_bang.md, section 10, for sources) ---
 SUM_LIMITS = [  # 95% upper limits on the sum, LCDM unless stated
     ("DESI DR2 + CMB (DESI 2025)", 0.0642),
-    ("+ Lyα full shape (DESI DR2 IV, 2026)", 0.0592),
+    ("DESI BAO + Lyα FS + CMB-SPA (DESI DR2 IV, 2026)", 0.0592),
     ("CMB-SPA + DESI DR2 + DES SN, oscillation prior", 0.092),  # Hou et al. 2026, hierarchy-informed prior
     ("DESI DR2 + CMB, w0wa dark energy", 0.16),
 ]
 KATRIN_MBETA = 0.45            # eV, 90% CL (KATRIN Collaboration, Science 2025)
-KLZ_MBB = (0.028, 0.122)       # eV, 90% CL, range from nuclear matrix elements (KamLAND-Zen 2024)
-NEXT_GEN_MBB = (0.009, 0.021)  # eV, LEGEND-1000 design discovery sensitivity (pre-CDR 2021)
-SIGMA_SUM_NOW = 0.020          # eV, marginalised error on the sum, DESI DR2 + CMB
+KLZ_MBB = (0.028, 0.122)       # eV, 90% CL, range from nuclear matrix elements (KamLAND-Zen, PRL 2025)
+NEXT_GEN_MBB = (0.009, 0.021)  # eV, LEGEND-1000 3-sigma discovery sensitivity (pre-CDR 2021)
+SIGMA_SUM_NOW = 0.053          # eV, error on the sum allowing negative values (Elbers et al. 2025);
+                               # the quoted 0.020 comes from a posterior cut off at zero
 
 
 def masses(m0, order):
@@ -140,7 +145,7 @@ if __name__ == "__main__":
     a2.axhspan(KLZ_MBB[1], 1, color="red", alpha=0.10, lw=0)
     a2.axhspan(*KLZ_MBB, color="red", alpha=0.05, lw=0)
     a2.axhline(KLZ_MBB[0], color="0.25", lw=1, ls="--"); a2.axhline(KLZ_MBB[1], color="0.25", lw=1)
-    a2.text(1.4e-3, KLZ_MBB[1] * 1.08, "KamLAND-Zen 2024: excluded above 28–122 meV\n(range = nuclear-physics uncertainty)",
+    a2.text(1.4e-3, KLZ_MBB[1] * 1.08, "KamLAND-Zen 2025: excluded above 28–122 meV\n(range = nuclear-physics uncertainty)",
             fontsize=7.5, color="0.2")
     a2.axhspan(*NEXT_GEN_MBB, color="0.5", alpha=0.18, lw=0)
     a2.text(1.4e-3, NEXT_GEN_MBB[0] * 0.92, "next generation reach (LEGEND-1000 goal: 9–21 meV)", va="top", fontsize=7.5, color="0.2")
@@ -151,5 +156,5 @@ if __name__ == "__main__":
     a2.legend(fontsize=8, loc="lower right")
     fig.text(0.5, 0.005, "Markers at the left edge: lightest mass = 0 (the CPT-mirror point). "
              "Oscillation data: NuFIT 6.0. Bands: unknown Majorana phases.", ha="center", fontsize=8, color="0.3")
-    fig.tight_layout(rect=(0, 0.03, 1, 1)); fig.savefig("neutrino_mass.png", dpi=150)
+    fig.tight_layout(rect=(0, 0.03, 1, 1)); fig.savefig(os.path.join(HERE, "neutrino_mass.png"), dpi=150)
     print("wrote neutrino_mass.png")

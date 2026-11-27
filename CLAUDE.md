@@ -45,7 +45,7 @@ different subject. Keep it separate: never copy it back into
   the English page changes, make the same change here (it was generated once by exact
   string replacement; edit it directly now).
 
-Git repository, remote `origin` = github.com/Jrbecart-uo/cosmology (private),
+Git repository, remote `origin` = github.com/Jrbecart-uo/cosmology (public since 2026-11-27),
 branch `main`.
 
 Public copy of the two pages (approved by the user on 2026-10-26): repo

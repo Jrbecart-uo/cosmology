@@ -19,7 +19,6 @@ guesses.
 | `ns_r.py` → `ns_r.png` | Slow-roll predictions (n_s, r) for standard inflation models vs current CMB limits (note section 8). |
 | `lowl_cutoff.py` → `lowl_cutoff.png` | Fits a "just enough inflation" large-scale cutoff to the Planck 2018 low-ℓ temperature spectrum with CAMB, with anomaly p-values and an E-mode forecast (section 9). |
 | `neutrino_mass.py` → `neutrino_mass.png` | Neutrino-mass observables vs the CPT-mirror universe's massless-neutrino prediction, with DESI, KATRIN and KamLAND-Zen limits (section 10). |
-| `CLAUDE.md` | Working instructions for the AI assistant that helps maintain the notes. |
 
 ## The three data tests, in one line each
 
